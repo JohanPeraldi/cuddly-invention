@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML/CSS test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.less" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="page-header">
+        <h1 class="page-header__title">Invoices</h1>
+        <div class="page-header__options">
+          <button class="btn">
+            <img
+              src="./assets/icons/icon-arrow-up.svg"
+              class="icon--arrow-up"
+            />
+            Export
+          </button>
+          <button class="btn">
+            <img src="./assets/icons/icon-plus.svg" class="icon--plus" />
+            New
+          </button>
+          <img src="./assets/icons/icon-filter.svg" class="icon--filter" />
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+      </header>
+      <main class="table">
+        <div class="table__pagination">
+          <div class="table__pagination-controls-left">
+            <span>Results per page</span>
+            <input type="number" min="1" max="100" value="20" />
+            <img
+              src="./assets/icons/icon-arrow-down.svg"
+              class="icon--arrow-down"
+            />
+          </div>
+          <div class="table__pagination-controls-center">
+            <img
+              src="./assets/icons/icon-chevron-left.svg"
+              class="icon--chevron-left"
+            />
+            <span>1</span>
+            <img
+              src="./assets/icons/icon-chevron-right.svg"
+              class="icon--chevron-right"
+            />
+          </div>
+          <div class="table__pagination-controls-right">
+            <span>Page</span>
+            <input type="number" min="1" max="100" value="20" />
+            <img
+              src="./assets/icons/icon-arrow-down.svg"
+              class="icon--arrow-down"
+            />
+          </div>
+        </div>
+        <div class="table__header">
+          <input
+            class="table__header-input"
+            type="checkbox"
+            name="select-all"
+            id="select-all"
+          />
+          <span class="table__header-title">Type</span>
+          <span class="table__header-title">Date</span>
+          <span class="table__header-title">Customer</span>
+          <span class="table__header-title">Location</span>
+          <span class="table__header-title">State</span>
+          <span class="table__header-title">Total</span>
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select1"
+            id="select1"
+          />
+          <p class="table__row-entry">Receipt <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022</p>
+          <span class="table__row-entry">Lydia Dias</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--progress" />
+            <span>In progress</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select2"
+            id="select2"
+          />
+          <p class="table__row-entry">Receipt <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
+          <span class="table__row-entry">Livia Siphron</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--pending" />
+            <span>Pending</span>
+          </div>
+          <p class="table__row-entry">129.00€ <span>Unpaid 200.29€</span></p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select3"
+            id="select3"
+          />
+          <p class="table__row-entry">Invoice-Waybill <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022</p>
+          <span class="table__row-entry">Tatiana George</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--success" />
+            <span>Success</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select4"
+            id="select4"
+            checked
+          />
+          <p class="table__row-entry">Invoice-Waybill <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022</p>
+          <span class="table__row-entry">Dulce Lipshutz</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--complete" />
+            <span>Complete</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select5"
+            id="select5"
+          />
+          <p class="table__row-entry">Prepayment inv. <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022</p>
+          <span class="table__row-entry">Paityn Philips</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--progress" />
+            <span>In progress</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img href="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select6"
+            id="select6"
+            checked
+          />
+          <p class="table__row-entry">Prepayment inv. <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022</p>
+          <span class="table__row-entry">Jordyn Mango</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--pending" />
+            <span>Pending</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select7"
+            id="select7"
+          />
+          <p class="table__row-entry">Receipt <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
+          <span class="table__row-entry">Paityn Workman</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--success" />
+            <span>Success</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select8"
+            id="select8"
+          />
+          <p class="table__row-entry">Receipt <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
+          <span class="table__row-entry">Davis Dorwart</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--complete" />
+            <span>Complete</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select9"
+            id="select9"
+          />
+          <p class="table__row-entry">Receipt <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022</p>
+          <span class="table__row-entry">Craig Workman</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--complete" />
+            <span>Complete</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+        <div class="table__row">
+          <input
+            class="table__row-input"
+            type="checkbox"
+            name="select10"
+            id="select10"
+          />
+          <p class="table__row-entry">Receipt <span>#100048</span></p>
+          <p class="table__row-entry">21.10.2022</p>
+          <span class="table__row-entry">Alfredo George</span>
+          <span class="table__row-entry">Location #12</span>
+          <div class="table__row-status">
+            <img src="#" class="icon-status--complete" />
+            <span>Complete</span>
+          </div>
+          <p class="table__row-entry">129.00€</p>
+          <img src="./assets/icons/icon-more.svg" class="icon--more" />
+        </div>
+      </main>
+      <aside class="customers">
+        <div class="customers__header">
+          <h2 class="customers__title">Customers</h2>
+          <div class="customers__add-btn">
+            <button class="btn btn--add">
+              <img src="./assets/icons/icon-person.svg" class="icon--person" />
+              Add
+            </button>
+          </div>
+        </div>
+        <div class="customers__alphabet">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        </div>
+        <div class="customers__search">
+          <input type="text" name="search" id="search" />
+          <button class="btn">Search</button>
+        </div>
+        <ul class="customers__list">
+          <li>Marathon Oil Corp.</li>
+          <li>Sealed Air</li>
+          <li>Southern Company</li>
+          <li>Atmos Energy</li>
+          <li>Equifax Inc.</li>
+          <li>Kansas City Southern</li>
+          <li>Fidelity National Information Services</li>
+          <li>Colgate-Palmolive</li>
+          <li>Air Products & Chemicals Inc</li>
+          <li>Intuitive Surgical Inc.</li>
+          <li>Quest Diagnostics</li>
+          <li>Crown Castle International Corp.</li>
+          <li>News Corp. Class A</li>
+          <li>Federal Realty Investment Trust</li>
+          <li>Humana Inc.</li>
+        </ul>
+        <div class="customers__import">
+          <div class="customers__import-header">
+            <h3 class="customers__import-title">Add customers</h3>
+            <img src="./assets/icons/icon-close.svg" class="icon--close" />
+          </div>
+          <p class="customers__import-description">
+            You can add customers by pressing the Add + button in the corner or
+            by importing your clients from a CSV file
+          </p>
+          <button class="btn">Import customers</button>
+        </div>
+      </aside>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

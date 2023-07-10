@@ -1,0 +1,173 @@
+/***************
+**** COLORS ****
+***************/
+@header-color: #E1E6EF;
+@main-color: rgb(180, 255, 180);
+@aside-color: rgb(186, 186, 255);
+@footer-color: white;
+
+// Fonts
+@main-font-color: rgba(29, 36, 51, 0.75);
+@themes-light-disabled-black: rgba(29, 36, 51, 0.50);
+@themes-light-primary-black: #1D2433;
+
+/***************
+**** LAYOUT ****
+***************/
+@main-padding: 24px;
+@secondary-padding: 16px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: grid;
+  /* grid-template-columns: [col1-start] 64px [col1-end col2-start] 200px [col2-end col3-start] 180px [col3-end col4-start] 273px [col4-end col5-start] 150px [col5-end col6-start] 160px [col6-end col7-start] 150px [col7-end col8-start] 64px [col8-end col9-start] 338px [col9-end];
+  grid-template-rows: [row1-start] 56px [row1-end row2-start] 56px [row2-end row3-start] 43px [row3-end row4-start] repeat(10, 64px [table-row]) 56px [footer-end];
+  grid-template-areas:
+    "header | header | header | header | header | header | header | header | header"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "table | table | table | table | table | table | table | table | aside"
+    "footer | footer | footer | footer | footer | footer | footer | footer | footer"; */
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "header header"
+    "table aside"
+    "footer footer";
+}
+
+// Grid areas
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: header;
+  background-color: @header-color;
+  height: 56px;
+  padding: 0 @main-padding;
+
+  &__title {
+    color: @main-font-color;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  /* &__options {
+    display: flex;
+  } */
+}
+
+.table {
+  grid-area: table;
+  background-color: @main-color;
+}
+
+.customers {
+  grid-area: aside;
+  background-color: @aside-color;
+  padding: @secondary-padding;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  &__alphabet {
+    color: @themes-light-disabled-black;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.8px;
+    padding: 0 8px;
+  }
+
+  &__search {
+    margin: 16px 0;
+  }
+
+  &__list {
+    color: @main-font-color;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 16px;
+  }
+
+  &__import {
+    background-color: @header-color;
+    border-radius: 5px;
+    padding: @secondary-padding @main-padding;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-title {
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: -1px;
+      color: @main-font-color;
+    }
+
+    &-description {
+      color: @main-font-color;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.footer {
+  grid-area: footer;
+  background-color: @footer-color;
+  height: 56px;
+}
+
+// Buttons
+.btn--add {
+  color: @themes-light-primary-black;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
