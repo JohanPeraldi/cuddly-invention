@@ -1,5 +1,7 @@
 .parcel-cache/
+.cache/
 dist/
 node_modules/
 .prettierignore
 .prettierrc.json
+.DS_Store
