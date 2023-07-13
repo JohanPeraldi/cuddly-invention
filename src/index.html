@@ -32,232 +32,253 @@
           <img src="../icons/icon-more.svg" class="icon--more" />
         </div>
       </header>
-      <main class="table">
-        <div class="table__pagination">
-          <div class="table__pagination-controls-left">
-            <span>Results per page</span>
-            <input type="number" min="1" max="100" value="20" />
-            <img
-              src="../icons/icon-arrow-down.svg"
-              class="icon--arrow-down"
+      <main class="main">
+        <div class="pagination">
+          <div class="pagination-controls">
+            <div class="pagination-controls-item">
+              <span>Results per page</span>
+            </div>
+            <div class="pagination-controls-item">
+              <input type="number" min="1" max="100" value="20" />
+            </div>
+          </div>
+          <div class="pagination-controls">
+            <div class="pagination-controls-item">
+              <img
+                src="../icons/icon-chevron-left.svg"
+                class="icon--chevron-left"
+              />
+            </div>
+            <div class="pagination-controls-item">
+              <span>1</span>
+            </div>
+            <div class="pagination-controls-item">
+              <img
+                src="../icons/icon-chevron-right.svg"
+                class="icon--chevron-right"
+              />
+            </div>
+          </div>
+          <div class="pagination-controls">
+            <div class="pagination-controls-item">
+              <span>Page</span>
+            </div>
+            <div class="pagination-controls-item">
+              <input type="number" min="1" max="100" value="20" />
+            </div>
+          </div>
+        </div>
+        <section class="table">
+          <div class="table__header">
+            <input
+              class="table__header-input"
+              type="checkbox"
+              name="select-all"
+              id="select-all"
             />
+            <div>
+              <span class="table__header-title">Type</span>
+              <span class="table__header-title">Date</span>
+            </div>
+            <div>
+              <span class="table__header-title">Customer</span>
+              <span class="table__header-title">Location</span>
+            </div>
+            <div>
+              <span class="table__header-title">State</span>
+              <span class="table__header-title">Total</span>
+            </div>
           </div>
-          <div class="table__pagination-controls-center">
-            <img
-              src="../icons/icon-chevron-left.svg"
-              class="icon--chevron-left"
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select1"
+              id="select1"
             />
-            <span>1</span>
-            <img
-              src="../icons/icon-chevron-right.svg"
-              class="icon--chevron-right"
+            <div>
+              <p class="table__row-entry">Receipt <span>#100048</span></p>
+              <p class="table__row-entry">21.10.2022</p>
+            </div>
+            <div>
+              <span class="table__row-entry">Lydia Dias</span>
+              <span class="table__row-entry">Location #12</span>
+            </div>
+            <div>
+              <div class="table__row-status">
+                <span>In progress</span>
+              </div>
+              <span class="table__row-entry">129.00€</span>
+            </div>
+            <div>
+              <img src="../icons/icon-more-white-bgd.svg" class="icon--more" />
+            </div>
+          </div>
+          <!-- <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select2"
+              id="select2"
             />
+            <p class="table__row-entry">Receipt <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
+            <span class="table__row-entry">Livia Siphron</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--pending" />
+              <span>Pending</span>
+            </div>
+            <p class="table__row-entry">129.00€ <span>Unpaid 200.29€</span></p>
+            <img src="../icons/icon-more.svg" class="icon--more" />
           </div>
-          <div class="table__pagination-controls-right">
-            <span>Page</span>
-            <input type="number" min="1" max="100" value="20" />
-            <img
-              src="../icons/icon-arrow-down.svg"
-              class="icon--arrow-down"
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select3"
+              id="select3"
             />
+            <p class="table__row-entry">Invoice-Waybill <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022</p>
+            <span class="table__row-entry">Tatiana George</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--success" />
+              <span>Success</span>
+            </div>
+            <p class="table__row-entry">129.00€</p>
+            <img src="../icons/icon-more.svg" class="icon--more" />
           </div>
-        </div>
-        <div class="table__header">
-          <input
-            class="table__header-input"
-            type="checkbox"
-            name="select-all"
-            id="select-all"
-          />
-          <span class="table__header-title">Type</span>
-          <span class="table__header-title">Date</span>
-          <span class="table__header-title">Customer</span>
-          <span class="table__header-title">Location</span>
-          <span class="table__header-title">State</span>
-          <span class="table__header-title">Total</span>
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select1"
-            id="select1"
-          />
-          <p class="table__row-entry">Receipt <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022</p>
-          <span class="table__row-entry">Lydia Dias</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--progress" />
-            <span>In progress</span>
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select4"
+              id="select4"
+              checked
+            />
+            <p class="table__row-entry">Invoice-Waybill <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022</p>
+            <span class="table__row-entry">Dulce Lipshutz</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--complete" />
+              <span>Complete</span>
+            </div>
+            <p class="table__row-entry">129.00€</p>
+            <img src="../icons/icon-more.svg" class="icon--more" />
           </div>
-          <p class="table__row-entry">129.00€</p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select2"
-            id="select2"
-          />
-          <p class="table__row-entry">Receipt <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
-          <span class="table__row-entry">Livia Siphron</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--pending" />
-            <span>Pending</span>
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select5"
+              id="select5"
+            />
+            <p class="table__row-entry">Prepayment inv. <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022</p>
+            <span class="table__row-entry">Paityn Philips</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--progress" />
+              <span>In progress</span>
+            </div>
+            <p class="table__row-entry">129.00€</p>
+            <img href="../icons/icon-more.svg" class="icon--more" />
           </div>
-          <p class="table__row-entry">129.00€ <span>Unpaid 200.29€</span></p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select3"
-            id="select3"
-          />
-          <p class="table__row-entry">Invoice-Waybill <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022</p>
-          <span class="table__row-entry">Tatiana George</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--success" />
-            <span>Success</span>
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select6"
+              id="select6"
+              checked
+            />
+            <p class="table__row-entry">Prepayment inv. <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022</p>
+            <span class="table__row-entry">Jordyn Mango</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--pending" />
+              <span>Pending</span>
+            </div>
+            <p class="table__row-entry">129.00€</p>
+            <img src="../icons/icon-more.svg" class="icon--more" />
           </div>
-          <p class="table__row-entry">129.00€</p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select4"
-            id="select4"
-            checked
-          />
-          <p class="table__row-entry">Invoice-Waybill <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022</p>
-          <span class="table__row-entry">Dulce Lipshutz</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--complete" />
-            <span>Complete</span>
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select7"
+              id="select7"
+            />
+            <p class="table__row-entry">Receipt <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
+            <span class="table__row-entry">Paityn Workman</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--success" />
+              <span>Success</span>
+            </div>
+            <p class="table__row-entry">129.00€</p>
+            <img src="../icons/icon-more.svg" class="icon--more" />
           </div>
-          <p class="table__row-entry">129.00€</p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select5"
-            id="select5"
-          />
-          <p class="table__row-entry">Prepayment inv. <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022</p>
-          <span class="table__row-entry">Paityn Philips</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--progress" />
-            <span>In progress</span>
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select8"
+              id="select8"
+            />
+            <p class="table__row-entry">Receipt <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
+            <span class="table__row-entry">Davis Dorwart</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--complete" />
+              <span>Complete</span>
+            </div>
+            <p class="table__row-entry">129.00€</p>
+            <img src="../icons/icon-more.svg" class="icon--more" />
           </div>
-          <p class="table__row-entry">129.00€</p>
-          <img href="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select6"
-            id="select6"
-            checked
-          />
-          <p class="table__row-entry">Prepayment inv. <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022</p>
-          <span class="table__row-entry">Jordyn Mango</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--pending" />
-            <span>Pending</span>
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select9"
+              id="select9"
+            />
+            <p class="table__row-entry">Receipt <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022</p>
+            <span class="table__row-entry">Craig Workman</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--complete" />
+              <span>Complete</span>
+            </div>
+            <p class="table__row-entry">129.00€</p>
+            <img src="../icons/icon-more.svg" class="icon--more" />
           </div>
-          <p class="table__row-entry">129.00€</p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select7"
-            id="select7"
-          />
-          <p class="table__row-entry">Receipt <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
-          <span class="table__row-entry">Paityn Workman</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--success" />
-            <span>Success</span>
-          </div>
-          <p class="table__row-entry">129.00€</p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select8"
-            id="select8"
-          />
-          <p class="table__row-entry">Receipt <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022 <span>Due 2 days ago</span></p>
-          <span class="table__row-entry">Davis Dorwart</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--complete" />
-            <span>Complete</span>
-          </div>
-          <p class="table__row-entry">129.00€</p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select9"
-            id="select9"
-          />
-          <p class="table__row-entry">Receipt <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022</p>
-          <span class="table__row-entry">Craig Workman</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--complete" />
-            <span>Complete</span>
-          </div>
-          <p class="table__row-entry">129.00€</p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
-        <div class="table__row">
-          <input
-            class="table__row-input"
-            type="checkbox"
-            name="select10"
-            id="select10"
-          />
-          <p class="table__row-entry">Receipt <span>#100048</span></p>
-          <p class="table__row-entry">21.10.2022</p>
-          <span class="table__row-entry">Alfredo George</span>
-          <span class="table__row-entry">Location #12</span>
-          <div class="table__row-status">
-            <img src="#" class="icon-status--complete" />
-            <span>Complete</span>
-          </div>
-          <p class="table__row-entry">129.00€</p>
-          <img src="../icons/icon-more.svg" class="icon--more" />
-        </div>
+          <div class="table__row">
+            <input
+              class="table__row-input"
+              type="checkbox"
+              name="select10"
+              id="select10"
+            />
+            <p class="table__row-entry">Receipt <span>#100048</span></p>
+            <p class="table__row-entry">21.10.2022</p>
+            <span class="table__row-entry">Alfredo George</span>
+            <span class="table__row-entry">Location #12</span>
+            <div class="table__row-status">
+              <img src="#" class="icon-status--complete" />
+              <span>Complete</span>
+            </div>
+            <p class="table__row-entry">129.00€</p>
+            <img src="../icons/icon-more.svg" class="icon--more" />
+          </div> -->
+        </section>
       </main>
       <aside class="customers">
         <div class="customers__header">

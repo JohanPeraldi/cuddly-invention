@@ -1,19 +1,19 @@
 /***************
 **** COLORS ****
 ***************/
-// Sections (for development purposes, remove before sending to production)
-@main-color: rgb(220, 254, 220);
-@aside-color: rgb(225, 225, 251);
-
 @color-primary-black: #1D2433;
 @color-primary-blue: #166EE8;
 @color-primary-light-blue: #ACCBF6;
 @color-primary-grey: #E1E6EF;
 @color-secondary-black: rgba(29, 36, 51, 0.75);
+@color-secondary-black-alt: rgba(29, 36, 51, 0.8);
+@color-secondary-blue: #3D8AF6;
 @color-disabled-black: rgba(29, 36, 51, 0.50);
 @color-success: #5ABB7A;
+@color-aside-background: #F8F9FC;
 @color-neutral-light: #F1F3F9;
 @color-neutral-light-alt: #E8F1FE;
+@color-neutral-light-medium: #ADBBCA;
 @color-neutral-light-blue: #BFCBD9;
 @color-bullet-points: #E1E6EF;
 
@@ -42,7 +42,9 @@ html {
   font-size: @font-size-main;
 }
 
-body {
+body,
+input,
+button {
   font-family: @font-family-main;
 }
 
@@ -51,7 +53,7 @@ body {
   grid-template-columns: 3fr 1fr;
   grid-template-areas:
     "header header"
-    "table aside"
+    "main aside"
     "footer footer";
 }
 
@@ -82,13 +84,147 @@ body {
   letter-spacing: -1px;
 }
 
+.main {
+  grid-area: main;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem @spacing-main;
+
+  &-controls {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    height: 3.2rem;
+
+    &-item {
+      span {
+        color: @color-secondary-black-alt;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: @spacing-secondary;
+        height: 100%;
+      }
+
+      input {
+        background: #FFF url('../icons/icon-arrow-down.svg');
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+        border: 1px solid @color-neutral-light-medium;
+        border-radius: 4px;
+        width: 5.5rem;
+        padding: 6px 9px;
+      }
+    }
+  }
+}
+
 .table {
-  grid-area: table;
-  background-color: @main-color;
+  &__header,
+  &__row {
+    display: grid;
+    grid-template-columns: 4rem 2fr 3fr 2fr 4rem;
+    align-items: center;
+    color: @color-primary-black;
+    font-size: 1.4rem;
+    font-style: normal;
+    letter-spacing: 0.28px;
+    padding: 0 @spacing-main;
+    
+    div:nth-child(2),
+    div:nth-child(4) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    div:nth-child(3) {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+    
+    div:nth-child(4) {
+      span:last-child {
+        text-align: right;
+        align-self: center;
+      }
+    }
+  }
+  
+  &__header {
+    grid-template-rows: 4.3rem;
+    background: @color-neutral-light;
+    font-weight: 600;
+    line-height: 1.7rem;
+  }
+
+  &__row {
+    grid-template-rows: 6.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+
+    div {
+      &:first-of-type {
+        p {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+  
+          span {
+            color: @color-secondary-black-alt;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      &:nth-of-type(3) {
+        div {
+          color: @color-secondary-blue;
+          font-size: 1.2rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1.7rem;
+          letter-spacing: 0.24px;
+          text-transform: uppercase;
+
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 0.8rem;
+            height: 0.8rem;
+            background-color: @color-secondary-blue;
+            border-radius: 50%;
+            margin-right: 8px;
+            margin-bottom: 1px; // Lifts the bullet points up slightly
+          }
+        }
+      }
+
+      &:last-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &-status {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 3px;
+      background: @color-neutral-light-alt;
+      width: fit-content;
+    }
+  }
 }
 
 .customers {
   grid-area: aside;
+  background-color: @color-aside-background;
   padding: @spacing-secondary;
 
   &__header {
@@ -193,7 +329,6 @@ body {
   padding: 1rem;
   border: none;
   border-radius: 5px;
-  font-family: @font-family-main;
   text-align: center;
   font-size: 1.6rem;
   font-style: normal;
