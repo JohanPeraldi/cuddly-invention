@@ -29,6 +29,7 @@
 /***************
 **** LAYOUT ****
 ***************/
+@max-width-content: 156rem;
 @spacing-main: 2.4rem;
 @spacing-secondary: 1.6rem;
 @height-header-footer: 5.6rem;
@@ -58,6 +59,9 @@ button {
     "header header"
     "main aside"
     "footer footer";
+  max-width: @max-width-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-header {
@@ -138,21 +142,21 @@ button {
     letter-spacing: 0.28px;
     padding: 0 @spacing-main;
     
+    // Columns Type & Date, State & Total
     div:nth-child(2),
     div:nth-child(4) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
     
+    // Columns Customer & Location
     div:nth-child(3) {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 3fr 2fr;
     }
-    
-    div:nth-child(4) {
-      span:last-child {
-        text-align: right;
-      }
+
+    input {
+      margin-left: -2.4rem;
     }
   }
   
@@ -174,52 +178,17 @@ button {
       background-color: @color-neutral-light-alt;
     }
 
-    div {
-      &:first-of-type {
-        p {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-  
-          span {
-            color: @color-secondary-black-alt;
-            font-size: 1rem;
-          }
-        }
-      }
-
-      &:nth-of-type(3) {
-        div:first-child {
-          font-size: 1.2rem;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 1.7rem;
-          letter-spacing: 0.24px;
-          text-transform: uppercase;
-
-          &::before {
-            content: "";
-            display: inline-block;
-            width: 0.8rem;
-            height: 0.8rem;
-            border-radius: 50%;
-            margin-right: 8px;
-            margin-bottom: 1px; // Lifts the bullet points up slightly
-          }
+    &-entry {
+      &.type {
+        > span {
+          display: block;
+          color: @color-secondary-black-alt;
+          font-size: 1rem;
         }
 
-        p {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-end;
+        + p { /* Date column */
+          align-self: center;
         }
-      }
-
-      &:last-child {
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
     }
 
@@ -232,6 +201,38 @@ button {
       border-radius: 3px;
       width: fit-content;
       height: fit-content;
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.7rem;
+      letter-spacing: 0.24px;
+      text-transform: uppercase;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        margin-right: 8px;
+        margin-bottom: 1px; // Lifts the bullet points up slightly
+      }
+
+      + p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+      }
+    }
+
+    div {
+      &:last-child { /* Parent div of img icon-more-white-bgd.svg */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 2.4rem;
+      }
     }
   }
 }
@@ -419,4 +420,9 @@ button {
   &::before {
     background-color: @color-success;
   }
+}
+
+.right {
+  text-align: right;
+  align-self: center;
 }
