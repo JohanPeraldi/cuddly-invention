@@ -10,12 +10,15 @@
 @color-secondary-blue: #3D8AF6;
 @color-disabled-black: rgba(29, 36, 51, 0.50);
 @color-success: #5ABB7A;
+@color-success-light: #F0FFF5;
 @color-aside-background: #F8F9FC;
 @color-neutral-light: #F1F3F9;
 @color-neutral-light-alt: #E8F1FE;
 @color-neutral-light-medium: #ADBBCA;
 @color-neutral-light-blue: #BFCBD9;
 @color-bullet-points: #E1E6EF;
+@color-danger-background: #FFEFEC;
+@color-danger-text: #E0593E;
 
 /*******************
 **** TYPOGRAPHY ****
@@ -165,6 +168,12 @@ button {
     grid-template-rows: 6.4rem;
     font-weight: 400;
     line-height: 2rem;
+    border-bottom: 1px solid @color-neutral-light;
+
+    /* Change the parent row's background-color when the checkbox is checked  */
+    &:has(input:checked) {
+      background-color: @color-neutral-light-alt;
+    }
 
     div {
       &:first-of-type {
@@ -181,8 +190,7 @@ button {
       }
 
       &:nth-of-type(3) {
-        div {
-          color: @color-secondary-blue;
+        div:first-child {
           font-size: 1.2rem;
           font-style: normal;
           font-weight: 400;
@@ -195,7 +203,6 @@ button {
             display: inline-block;
             width: 0.8rem;
             height: 0.8rem;
-            background-color: @color-secondary-blue;
             border-radius: 50%;
             margin-right: 8px;
             margin-bottom: 1px; // Lifts the bullet points up slightly
@@ -214,10 +221,11 @@ button {
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      align-self: center;
       padding: 4px 8px;
       border-radius: 3px;
-      background: @color-neutral-light-alt;
       width: fit-content;
+      height: fit-content;
     }
   }
 }
@@ -226,6 +234,7 @@ button {
   grid-area: aside;
   background-color: @color-aside-background;
   padding: @spacing-secondary;
+  min-height: 100vh - (5.6rem * 2); /* Viewport height - (header + footer height) */
 
   &__header {
     display: flex;
@@ -359,5 +368,49 @@ button {
     border: 1px solid @color-primary-light-blue;
     background: @color-neutral-light-alt;
     color: @color-primary-blue;
+  }
+}
+
+// Special classes
+.danger {
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: @color-danger-background;
+  color: @color-danger-text !important;
+  font-size: 1.2rem !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+}
+
+.progress {
+  background: @color-neutral-light-alt;
+  color: @color-secondary-blue;
+
+  &::before {
+    background-color: @color-secondary-blue;
+  }
+}
+
+.pending,
+.complete {
+  background: @color-aside-background;
+  color: @color-primary-black;
+
+  &::before {
+    background-color: @color-primary-black;
+  }
+}
+
+.success {
+  background: @color-success-light;
+  color: @color-success;
+
+  &::before {
+    background-color: @color-success;
   }
 }
