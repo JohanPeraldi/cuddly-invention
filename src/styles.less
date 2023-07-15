@@ -38,7 +38,8 @@
 **** BREAKPOINTS ****
 ********************/
 @desktop: 1399px;
-@tablet: 960px;
+@tablet: 959px;
+@phone: 839px;
 
 *,
 *::before,
@@ -68,6 +69,15 @@ button {
   max-width: @max-width-content;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (max-width: @phone) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "aside"
+      "main"
+      "footer";
+  }
 }
 
 .page-header {
@@ -78,6 +88,13 @@ button {
   background-color: @color-primary-grey;
   height: @height-header-footer;
   padding: 0 @spacing-main;
+
+  @media screen and (max-width: @phone) {
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1rem;
+    height: fit-content;
+  }
   
   &__options {
     display: flex;
@@ -106,6 +123,11 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem @spacing-main;
+
+  @media screen and (max-width: @phone) {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
 
   &-controls {
     display: flex;
@@ -165,6 +187,10 @@ button {
     letter-spacing: 0.28px;
     padding-left: @spacing-main;
     padding-right: @spacing-main;
+
+    /* @media screen and (max-width: 959px) {
+      grid-template-columns: 1fr;
+    } */
     
     // Columns Type & Date, State & Total
     div:nth-child(2),
@@ -212,7 +238,7 @@ button {
       padding-top: 0;
       padding-bottom: 0;
 
-      div {  
+      div {
         span {
           padding-top: 1rem;
           padding-bottom: 1rem;
@@ -227,6 +253,15 @@ button {
             text-align: left;
           }
         }
+      }
+    }
+
+    @media screen and (max-width: @tablet) {
+      padding-top: 1.7rem;
+      padding-bottom: 1.7rem;
+
+      div {
+        display: none !important;
       }
     }
   }
@@ -244,9 +279,21 @@ button {
       border-bottom-color: @color-neutral-light-medium;
     }
 
+    @media screen and (max-width: @tablet) {
+      grid-template-columns: 1fr;
+    }
+
     /* Change the parent row's background-color when the checkbox is checked  */
     &:has(input:checked) {
       background-color: @color-neutral-light-alt;
+    }
+
+    &-input {
+      @media screen and (max-width: @tablet) {
+        justify-self: start;
+        margin-left: 0 !important;
+        margin-bottom: 1rem;
+      }
     }
 
     &-entry {
@@ -262,7 +309,39 @@ button {
         }
       }
 
+      @media screen and (max-width: @tablet) {
+        &:first-child {
+          border-bottom: none;
+
+          &::before {
+            content: "Customer: ";
+            font-weight: bold;
+          }
+
+          + span {
+            &::before {
+              content: "Location: ";
+              font-weight: bold;
+            }
+          }
+        }
+
+        &:last-child {
+          &::before {
+            content: "Total: ";
+            font-weight: bold;
+          }
+        }
+      }
+
       &.type {
+        @media screen and (max-width: @tablet) {
+          &::before {
+            content: "Type: ";
+            font-weight: bold;
+          }
+        }
+
         > span {
           display: block;
           color: @color-secondary-black-alt;
@@ -271,6 +350,15 @@ button {
 
         + p { /* Date column */
           align-self: center;
+
+          @media screen and (max-width: @tablet) {
+            margin-bottom: 1rem;
+
+            &::before {
+              content: "Date: ";
+              font-weight: bold;
+            }
+          }
         }
       }
     }
@@ -293,6 +381,10 @@ button {
 
       @media screen and (max-width: @desktop) {
         margin-bottom: 0.5rem;
+      }
+
+      @media screen and (max-width: @tablet) {
+        margin-top: 1rem;
       }
 
       &::before {
@@ -323,6 +415,13 @@ button {
         justify-content: center;
         align-items: center;
         padding-left: 2.4rem;
+
+        @media screen and (max-width: @tablet) {
+          justify-content: flex-start;
+          padding-left: 0;
+          margin-left: -0.5rem;
+          margin-top: 1rem;
+        }
       }
     }
   }
