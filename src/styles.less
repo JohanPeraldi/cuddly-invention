@@ -34,6 +34,12 @@
 @spacing-secondary: 1.6rem;
 @height-header-footer: 5.6rem;
 
+/********************
+**** BREAKPOINTS ****
+********************/
+@desktop: 1399px;
+@tablet: 960px;
+
 *,
 *::before,
 *::after {
@@ -166,11 +172,26 @@ button {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
+
+    @media screen and (max-width: @desktop) {
+      // Columns Type & Date, State & Total
+      div:nth-child(2),
+      div:nth-child(4) {
+        grid-template-columns: 1fr;
+      }
+    }
     
     // Columns Customer & Location
     div:nth-child(3) {
       display: grid;
       grid-template-columns: 3fr 2fr;
+    }
+
+    @media screen and (max-width: @desktop) {
+      // Columns Customer & Location
+      div:nth-child(3) {
+        grid-template-columns: 1fr;
+      }
     }
 
     input {
@@ -185,6 +206,29 @@ button {
     line-height: 1.7rem;
     padding-top: 1.3rem;
     padding-bottom: 1.3rem;
+
+    @media screen and (max-width: @desktop) {
+      grid-template-rows: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      div {  
+        span {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+
+          // Type, Customer & State
+          &:first-child {
+            border-bottom: 1px solid @color-primary-black;
+          }
+
+          // Date, Location & Total
+          &:last-child {
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 
   &__row {
@@ -195,12 +239,29 @@ button {
     padding-top: 1.1rem;
     padding-bottom: 1.1rem;
 
+    @media screen and (max-width: @desktop) {
+      grid-template-rows: auto;
+      border-bottom-color: @color-neutral-light-medium;
+    }
+
     /* Change the parent row's background-color when the checkbox is checked  */
     &:has(input:checked) {
       background-color: @color-neutral-light-alt;
     }
 
     &-entry {
+      @media screen and (max-width: @desktop) {
+        &:first-child {
+          border-bottom: 1px solid @color-primary-grey;
+          margin-right: 2rem;
+          padding-bottom: 0.5rem;
+        }
+
+        &:last-child {
+          padding-top: 0.5rem;
+        }
+      }
+
       &.type {
         > span {
           display: block;
@@ -230,6 +291,10 @@ button {
       letter-spacing: 0.24px;
       text-transform: uppercase;
 
+      @media screen and (max-width: @desktop) {
+        margin-bottom: 0.5rem;
+      }
+
       &::before {
         content: "";
         display: inline-block;
@@ -245,6 +310,10 @@ button {
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
+
+        @media screen and (max-width: @desktop) {
+          align-items: flex-start;
+        }
       }
     }
 
@@ -414,6 +483,10 @@ button {
   line-height: 1.5rem;
   letter-spacing: 0.24px;
   text-transform: uppercase;
+
+  @media screen and (max-width: @desktop) {
+    display: flex;
+  }
 }
 
 .progress {
@@ -444,7 +517,12 @@ button {
   }
 }
 
-.right {
+.align-horizontally {
   text-align: right;
   align-self: center;
+
+  @media screen and (max-width: @desktop) {
+    text-align: left;
+    justify-self: flex-start;
+  }
 }
