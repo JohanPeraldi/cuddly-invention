@@ -1,24 +1,24 @@
 /***************
 **** COLORS ****
 ***************/
-@color-primary-black: #1D2433;
-@color-primary-blue: #166EE8;
-@color-primary-light-blue: #ACCBF6;
-@color-primary-grey: #E1E6EF;
+@color-primary-black: #1d2433;
+@color-primary-blue: #166ee8;
+@color-primary-light-blue: #accbf6;
+@color-primary-grey: #e1e6ef;
 @color-secondary-black: rgba(29, 36, 51, 0.75);
 @color-secondary-black-alt: rgba(29, 36, 51, 0.8);
-@color-secondary-blue: #3D8AF6;
-@color-disabled-black: rgba(29, 36, 51, 0.50);
-@color-success: #5ABB7A;
-@color-success-light: #F0FFF5;
-@color-aside-background: #F8F9FC;
-@color-neutral-light: #F1F3F9;
-@color-neutral-light-alt: #E8F1FE;
-@color-neutral-light-medium: #ADBBCA;
-@color-neutral-light-blue: #BFCBD9;
-@color-bullet-points: #E1E6EF;
-@color-danger-background: #FFEFEC;
-@color-danger-text: #E0593E;
+@color-secondary-blue: #3d8af6;
+@color-disabled-black: rgba(29, 36, 51, 0.5);
+@color-success: #5abb7a;
+@color-success-light: #f0fff5;
+@color-aside-background: #f8f9fc;
+@color-neutral-light: #f1f3f9;
+@color-neutral-light-alt: #e8f1fe;
+@color-neutral-light-medium: #adbbca;
+@color-neutral-light-blue: #bfcbd9;
+@color-bullet-points: #e1e6ef;
+@color-danger-background: #ffefec;
+@color-danger-text: #e0593e;
 
 /*******************
 **** TYPOGRAPHY ****
@@ -95,7 +95,7 @@ button {
     padding: 1rem;
     height: fit-content;
   }
-  
+
   &__options {
     display: flex;
     justify-content: space-between;
@@ -163,7 +163,7 @@ button {
       }
 
       input {
-        background: #FFF url('../icons/icon-arrow-down.svg');
+        background: #fff url("../icons/icon-arrow-down.svg");
         background-repeat: no-repeat;
         background-position: 85% 50%;
         border: 1px solid @color-neutral-light-medium;
@@ -191,7 +191,7 @@ button {
     /* @media screen and (max-width: 959px) {
       grid-template-columns: 1fr;
     } */
-    
+
     // Columns Type & Date, State & Total
     div:nth-child(2),
     div:nth-child(4) {
@@ -206,7 +206,7 @@ button {
         grid-template-columns: 1fr;
       }
     }
-    
+
     // Columns Customer & Location
     div:nth-child(3) {
       display: grid;
@@ -224,7 +224,7 @@ button {
       margin-left: -2.4rem;
     }
   }
-  
+
   &__header {
     grid-template-rows: 1.7rem;
     background: @color-neutral-light;
@@ -348,7 +348,8 @@ button {
           font-size: 1rem;
         }
 
-        + p { /* Date column */
+        + p {
+          /* Date column */
           align-self: center;
 
           @media screen and (max-width: @tablet) {
@@ -410,7 +411,8 @@ button {
     }
 
     div {
-      &:last-child { /* Parent div of img icon-more-white-bgd.svg */
+      &:last-child {
+        /* Parent div of img icon-more-white-bgd.svg */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -462,7 +464,7 @@ button {
       flex-grow: 2;
       border-radius: 4px;
       border: 1px solid @color-neutral-light-blue;
-      background: #FFF url('../icons/icon-search.svg');
+      background: #fff url("../icons/icon-search.svg");
       background-repeat: no-repeat;
       background-position: 5% 50%;
     }
@@ -522,7 +524,7 @@ button {
 
 .footer {
   grid-area: footer;
-  background-color: #FFF;
+  background-color: #fff;
   height: @height-header-footer;
 }
 
@@ -542,7 +544,7 @@ button {
   line-height: 1.6rem;
   letter-spacing: 0.32px;
   cursor: pointer;
-  
+
   &--header {
     color: @color-primary-black;
     background: @color-neutral-light;
@@ -550,7 +552,7 @@ button {
 
   &--success {
     background: @color-success;
-    color: #FFF;
+    color: #fff;
   }
 
   &--add {
