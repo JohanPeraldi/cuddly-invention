@@ -136,7 +136,7 @@ button {
     height: 3.2rem;
 
     &-item {
-      &:has(img) {
+      img {
         // Targets the chevron-left & chevron-right elements
         background: @color-neutral-light;
         padding: 8px 8px 6px;
@@ -284,7 +284,7 @@ button {
     }
 
     /* Change the parent row's background-color when the checkbox is checked  */
-    &:has(input:checked) {
+    input:checked {
       background-color: @color-neutral-light-alt;
     }
 
